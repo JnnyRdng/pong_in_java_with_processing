@@ -1,8 +1,8 @@
-#Pong
+# Pong
 Simple pong game using inheritance in Java, built with [Processing 3](https://www.processing.org/download/).
 
 
-##IntelliJ SetUp
+## IntelliJ SetUp
 Make sure Processing 3 has been downloaded and installed.
 
 In IntelliJ, go to `File > Project Structure`.
