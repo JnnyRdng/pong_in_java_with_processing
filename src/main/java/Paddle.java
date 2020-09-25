@@ -1,9 +1,8 @@
 public class Paddle extends Block {
 
 
-
     public Paddle(double x) {
-        super(x, (Runner.pro.height/2) - 25, 10, 50);
+        super(x, (Runner.pro.height / 2f) - 25, 10, 50);
 
     }
 
@@ -18,7 +17,6 @@ public class Paddle extends Block {
         setY(pos - h / 2);
     }
 
-
     public void collide(Ball ball) {
         double bx = ball.getX();
         double by = ball.getY();
@@ -30,8 +28,4 @@ public class Paddle extends Block {
             }
         }
     }
-
-
-
-
 }

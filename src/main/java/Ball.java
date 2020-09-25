@@ -31,7 +31,7 @@ public class Ball  {
         }
 
         if (x > Runner.pro.width || x < 0) {
-            x = Runner.pro.width / 2;
+            x = Runner.pro.width / 2f;
             flipXv();
         }
 

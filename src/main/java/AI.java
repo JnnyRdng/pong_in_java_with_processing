@@ -11,7 +11,7 @@ public class AI extends Paddle {
 
     public void update(Ball ball) {
         xOff = xOff + (float)0.05;
-        if (ball.getXV() > 0 && ball.getX() > Runner.pro.width / 2) {
+        if (ball.getXV() > 0 && ball.getX() > Runner.pro.width / 2f) {
             double centre = getY() + (getH() / 2);
             if (centre > ball.getY()) {
                 setY(getY() - speed);

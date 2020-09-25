@@ -16,8 +16,6 @@ public class Runner extends PApplet {
 
     public HashMap<String, Integer> scores;
 
-
-
     public void settings() {
         size(740, 400);
     }
@@ -30,7 +28,7 @@ public class Runner extends PApplet {
         walls.add(new Wall(0, height - 10, width, 10));
         paddle = new Paddle(10);
         aiPaddle = new AI(width - 20);
-        ball = new Ball(width/2, height/3, 10);
+        ball = new Ball(width/2f, height/3f, 10);
 
         scores = new HashMap<>();
         scores.put("aiScore", 0);
@@ -40,18 +38,18 @@ public class Runner extends PApplet {
     public void draw() {
         background(0);
         stroke(255);
-        line(width/2, 0, width/2, height);
+        line(width / 2f, 0, width / 2f, height);
 
         ball.update(scores, aiPaddle);
         ball.draw();
 
-        for (Block wall : walls) {
+        for (Wall wall : walls) {
             wall.draw();
             wall.collide(ball);
         }
 
-        text(String.format("%d", scores.get("pScore")), width/4, 40);
-        text(String.format("%d", scores.get("aiScore")), 3*width/4, 40);
+        text(String.format("%d", scores.get("pScore")), width / 4f, 40);
+        text(String.format("%d", scores.get("aiScore")), 3 * width / 4f, 40);
 
         paddle.update(mouseY);
         paddle.collide(ball);
@@ -60,6 +58,5 @@ public class Runner extends PApplet {
         aiPaddle.update(ball);
         aiPaddle.collide(ball);
         aiPaddle.draw();
-
     }
 }
