@@ -1,4 +1,4 @@
-public class Block {
+public abstract class Block {
 
     private double x;
     private double y;
