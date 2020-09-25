@@ -1,12 +1,10 @@
 public class Paddle extends Block {
 
-    private double speed;
-    private float xoff;
+
 
     public Paddle(double x) {
         super(x, (Runner.pro.height/2) - 25, 10, 50);
-        this.speed = 3.5;
-        xoff = 0;
+
     }
 
     public void update(double Y) {
@@ -20,21 +18,6 @@ public class Paddle extends Block {
         setY(pos - h / 2);
     }
 
-    public void aiUpdate(Ball ball) {
-        xoff = xoff + (float)0.05;
-        if (ball.getXV() > 0 && ball.getX() > Runner.pro.width / 2) {
-            double centre = getY() + (getH() / 2);
-            if (centre > ball.getY()) {
-                setY(getY() - speed);
-            } else {
-                setY(getY() + speed);
-            }
-        } else {
-            float n = (Runner.pro.noise(xoff) * 8) - 4;
-            setY(getY() + n);
-        }
-        update(getY() + getH()/2);
-    }
 
     public void collide(Ball ball) {
         double bx = ball.getX();
@@ -48,9 +31,7 @@ public class Paddle extends Block {
         }
     }
 
-    public void increaseSpeed() {
-        this.speed += 0.05;
-    }
+
 
 
 }

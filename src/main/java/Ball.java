@@ -16,7 +16,7 @@ public class Ball  {
         this.yv = -4;
     }
 
-    public void update(HashMap<String, Integer> scores, Paddle aiPaddle) {
+    public void update(HashMap<String, Integer> scores, AI aiPaddle) {
         x += xv;
         y += yv;
 

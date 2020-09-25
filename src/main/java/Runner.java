@@ -9,9 +9,9 @@ public class Runner extends PApplet {
         PApplet.main("Runner", args);
     }
 
-    ArrayList<Block> walls;
+    ArrayList<Wall> walls;
     Paddle paddle;
-    Paddle aiPaddle;
+    AI aiPaddle;
     Ball ball;
 
     public HashMap<String, Integer> scores;
@@ -26,10 +26,10 @@ public class Runner extends PApplet {
         pro = this;
 
         walls = new ArrayList<>();
-        walls.add(new Block(0, 0, width, 10));
-        walls.add(new Block(0, height - 10, width, 10));
+        walls.add(new Wall(0, 0, width, 10));
+        walls.add(new Wall(0, height - 10, width, 10));
         paddle = new Paddle(10);
-        aiPaddle = new Paddle(width - 20);
+        aiPaddle = new AI(width - 20);
         ball = new Ball(width/2, height/3, 10);
 
         scores = new HashMap<>();
@@ -57,7 +57,7 @@ public class Runner extends PApplet {
         paddle.collide(ball);
         paddle.draw();
 
-        aiPaddle.aiUpdate(ball);
+        aiPaddle.update(ball);
         aiPaddle.collide(ball);
         aiPaddle.draw();
 
